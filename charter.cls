@@ -52,6 +52,7 @@
 \newcommand*{\juradoTres}[1]{\def\jurtresname{#1}}
 \newcommand*{\pertenenciaJurTres}[1]{\def\pertetresame{#1}}
 \newcommand*{\fechaINICIO}[1]{\def\fechaInicioName{#1}}
+\newcommand*{\fechaPrimeraEntrega}[1]{\def\fechaPrimeraEntregaName{#1}}
 \newcommand*{\fechaFINALPlan}[1]{\def\fechaFinalPlanName{#1}}
 \newcommand*{\fechaFINALTrabajo}[1]{\def\fechaFinalName{#1}} 
 
