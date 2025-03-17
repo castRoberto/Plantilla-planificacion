@@ -230,47 +230,18 @@ Para brindar una idea más clara del trabajo propuesto, en la figura \ref{fig:di
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
-
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
+Rol           & Nombre y Apellido & Organización 	    & Puesto 	\\ \hline
 Cliente       & \clientename      &\empclientename	& -        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & Jhon \newline 
-				 Oscar Ignacio Quiroz          & \empclientename \newline \empclientename	& 
-				Jefe de ingeniería        	\\ \hline
+Responsable   & \authorname       & FIUBA        	    & Alumno 	\\ \hline
+Orientador    & \supname	      	 & \pertesupname 	& Director del Trabajo Final \\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
@@ -280,46 +251,91 @@ El propósito de este proyecto es desarrollar e integrar un sistema de detecció
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
 El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
+	\item Desarrollo de hardware:
 		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
+			\item Diseño e implementación de una tarjeta electrónica para la integración de 					sensores, procesamiento y comunicaciones.
+			
+			\item Selección y configuración de componentes electrónicos (ESP32, micrófono MEMS, 				unidad de potencia, almacenamiento, LEDs).
+		\end{itemize}	
+	
+	\item Creación de datasets:
+		\begin{itemize}
+			\item Captura de datos de temperatura, acústica y tiempo durante el tostado.
+			
+			\item Generación de un conjunto de datos etiquetados para el entrenamiento y 						validación del sistema de detección.
+		\end{itemize}	
+	
+	\item Desarrollo de firmware.
+		\begin{itemize}
+			\item Adquisición de señales: Captura y sincronización de datos acústicos y térmicos 				en tiempo real.
+			
+			\item Procesamiento de señales: Implementación de técnicas DSP para la detección 					automática del primer crack.
+			
+			\item Comunicaciones: Envío y recepción de datos mediante WiFi y RS-485 a la tarjeta 				principal.
+			
+			\item Almacenamiento: Registro de eventos y señales en una tarjeta SD.
+			
+			\item Gestión operativa del sistema: Control de los distintos estados de 							funcionamiento, garantizando la correcta ejecución de las tareas en cada etapa del 				proceso.
 		\end{itemize}
-	\item ...
+	
+	\item Integración y pruebas.
 	
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto no incluye:
+\begin{itemize}
+	\item Control automático de la máquina tostadora más allá de la detección del primer crack.
+	\item Desarrollo de hardware externo a la unidad de detección (excepto la interfaz de 				comunicación).
+	\item Análisis detallado del segundo crack o de otras variables sensoriales del café.
+	
+\end{itemize}
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+El sistema se desarrollará como un prototipo funcional, que permitirá evaluar su desempeño en un entorno real, con la posibilidad de futuras mejoras y optimización en versiones posteriores.
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Condiciones del entorno de operación:
+		\begin{itemize}
+			\item Se asume que el sistema operará en un entorno de tostado con niveles de ruido 				controlados, donde el micrófono podrá capturar el sonido del primer crack sin 					interferencias excesivas.
+			
+			\item Se considera que las variaciones en la temperatura y humedad ambiente no 					afectarán significativamente la precisión de los sensores utilizados.
+		\end{itemize}
+	
+	\item Disponibilidad de infraestructura y hardware:
+		\begin{itemize}
+			\item Se cuenta con acceso a máquinas tostadoras de \empclientename para la 						integración y validación del sistema.
+			
+			\item El ESP32 y los demás componentes electrónicos serán suficientes en términos de 				capacidad de procesamiento y almacenamiento para ejecutar los algoritmos de 						detección.
+		\end{itemize}
+	
+	\item Disponibilidad de materiales:
+		Prisma Coffee Tech proporcionará los materiales y equipos necesarios, incluyendo 					sensores, tarjetas electrónicas y componentes auxiliares
+	
+	\item Fiabilidad de la comunicación:
+		\begin{itemize}
+			\item Se asume que la comunicación WiFi estará disponible en la mayoría de los 					entornos de operación, y que RS-485 servirá como respaldo en caso de fallos.
+			
+			\item La tarjeta principal de la tostadora procesará correctamente los eventos 					enviados por el sistema de detección.
+		\end{itemize}
+	
+	\item Precisión del modelo de detección:
+		Se asume que la combinación de señales acústicas y térmicas permitirá detectar 					el primer crack con una precisión suficiente para la automatización del proceso.
+	
+	\item Factores externos:
+		\begin{itemize}
+			\item \empclientename y las demás partes involucradas proporcionarán acceso a la 					información técnica necesaria para la integración del sistema.
+			
+			\item Se respetarán los acuerdos de confidencialidad y propiedad intelectual 						establecidos con la empresa.
+		\end{itemize}
+	
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
